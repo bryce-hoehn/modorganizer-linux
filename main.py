@@ -7,6 +7,7 @@ from ui.mainwindow import Ui_MainWindow
 from ui.instancemanagerdialog import Ui_InstanceManagerDialog
 from ui.profilesdialog import Ui_ProfilesDialog
 from log_handler import ListViewLogger, LogModel
+from utils.parse_config import ConfigHelper, get_executable_titles, get_mod_list
 
 class InstanceManager(QWidget):
     def __init__(self):
@@ -32,10 +33,12 @@ class MainWindow(QMainWindow):
         QTreeWidgetItem(self.ui.downloadView, ["mod1.zip", "Installed", "5mb", "mod1.zip"])
 
         # modList
+        modList = get_mod_list()
         self.ui.modList.setHeaderLabels(['Mod Name', 'Conflicts', 'Flags', 'Category', 'Version', 'Priority'])
         self.ui.modList.setAlternatingRowColors(True)
-        QTreeWidgetItem(self.ui.modList, ['3rd Person Behavior Fixes', '', '', 'Bug Fixes', '1.3', '1']).setCheckState(0, Qt.CheckState.Unchecked)
-        QTreeWidgetItem(self.ui.modList, ['Address Library', '', '', 'Bug Fixes', '1.3', '1']).setCheckState(0, Qt.CheckState.Unchecked)
+
+        for mod in modList:
+            QTreeWidgetItem(self.ui.modList, [mod, '', '', '', '1', '1']).setCheckState(0, Qt.CheckState.Unchecked)
 
         # instance manager
         self.ui.actionChange_Game.triggered.connect(self.show_instance_manager)
@@ -46,7 +49,11 @@ class MainWindow(QMainWindow):
         # profiles
         self.ui.actionAdd_Profile.triggered.connect(self.profile_manager)
 
+        helper = ConfigHelper()
 
+        current_profile = helper.get("General", "selected_profile")
+
+        self.ui.profileBox.addItem(current_profile)
         # filter
         self.ui.displayCategoriesBtn.toggled.connect(self.filter_toggle)
         self.ui.categoriesGroup.setVisible(False)
@@ -61,7 +68,11 @@ class MainWindow(QMainWindow):
         self.ui.logList.setModel(self.log_model)
         self.logger = ListViewLogger()
         self.logger.message_written.connect(self.log_model.add_log)
-        
+
+        # executables
+        exes = get_executable_titles()
+        self.ui.executablesListBox.addItems(exes)
+
         # Redirect stdout and stderr
         sys.stdout = self.logger
         sys.stderr = self.logger
@@ -88,7 +99,7 @@ class MainWindow(QMainWindow):
         dialog = QFileDialog(self)
         dialog.setDirectory('~/Downloads')
         dialog.setFileMode(QFileDialog.FileMode.ExistingFiles)
-        dialog.setNameFilter("*.zip")  # Corrected the name filter to "*.zip"
+        dialog.setNameFilter("*.zip")
         dialog.setViewMode(QFileDialog.ViewMode.List)
         if dialog.exec():
             filenames = dialog.selectedFiles()
