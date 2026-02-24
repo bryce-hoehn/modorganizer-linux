@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+src/core/__init__.py
+src/core/config.py
+src/core/instance.py
+src/core/mod.py
+src/core/profile.py
+src/modorganizer_linux.egg-info/PKG-INFO
+src/modorganizer_linux.egg-info/SOURCES.txt
+src/modorganizer_linux.egg-info/dependency_links.txt
+src/modorganizer_linux.egg-info/requires.txt
+src/modorganizer_linux.egg-info/top_level.txt
+src/ui/main_window.py
+src/utils/logging.py
+src/utils/parse_config.py

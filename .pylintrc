@@ -1,0 +1,5 @@
+# Source - https://stackoverflow.com/a/77952821
+# Posted by japatsu
+# Retrieved 2026-02-23, License - CC BY-SA 4.0
+
+extension-pkg-whitelist=PySide6

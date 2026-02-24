@@ -1,26 +1,23 @@
 import sys
 import webbrowser
-from pathlib import Path
-from PySide6.QtWidgets import QApplication, QMainWindow, QFileDialog, QTableWidgetItem, QAbstractItemView, QWidget, QTreeWidgetItem
+from PySide6.QtWidgets import (
+    QMainWindow,
+    QTreeWidgetItem,
+)
 from PySide6.QtCore import QUrl, Qt
-from ui.mainwindow import Ui_MainWindow
-from ui.instancemanagerdialog import Ui_InstanceManagerDialog
-from ui.profilesdialog import Ui_ProfilesDialog
-from log_handler import ListViewLogger, LogModel
-from utils.parse_config import ConfigHelper, get_executable_titles, get_mod_list
+from core.instance import InstanceManager
+from core.profile import ProfileManager
+from ui.dialogs.settings import SettingsDialog
+from utils.logging import ListViewLogger, LogModel
+from ui.generated.mainwindow import Ui_MainWindow
+from utils.parse_config import (
+    ConfigHelper,
+    get_executable_titles,
+    get_executables,
+    get_mod_list,
+)
 
-class InstanceManager(QWidget):
-    def __init__(self):
-        super().__init__()
-        self.ui = Ui_InstanceManagerDialog()
-        self.ui.setupUi(self)
 
-class ProfileManager(QWidget):
-    def __init__(self):
-        super().__init__()
-        self.ui = Ui_ProfilesDialog()
-        self.ui.setupUi(self)
-        
 class MainWindow(QMainWindow):
     def __init__(self, url=None):
         super(MainWindow, self).__init__()
@@ -30,15 +27,23 @@ class MainWindow(QMainWindow):
         # downloads
         self.ui.downloadView.setHeaderLabels(["Name", "Status", "Size", "Filename"])
         self.ui.downloadView.setAlternatingRowColors(True)
-        QTreeWidgetItem(self.ui.downloadView, ["mod1.zip", "Installed", "5mb", "mod1.zip"])
+        QTreeWidgetItem(
+            self.ui.downloadView, ["mod1.zip", "Installed", "5mb", "mod1.zip"]
+        )
 
         # modList
-        modList = get_mod_list()
-        self.ui.modList.setHeaderLabels(['Mod Name', 'Conflicts', 'Flags', 'Category', 'Version', 'Priority'])
+        mod_list = get_mod_list()
+        self.ui.modList.setHeaderLabels(
+            ["Mod Name", "Conflicts", "Flags", "Category", "Version", "Priority"]
+        )
         self.ui.modList.setAlternatingRowColors(True)
 
-        for mod in modList:
-            QTreeWidgetItem(self.ui.modList, [mod, '', '', '', '1', '1']).setCheckState(0, Qt.CheckState.Unchecked)
+        for mod in mod_list:
+            QTreeWidgetItem(self.ui.modList, [mod, "", "", "", "1", "1"]).setCheckState(
+                0, Qt.CheckState.Unchecked
+            )
+
+        self.ui.activeModsCounter.display(len(mod_list))
 
         # instance manager
         self.ui.actionChange_Game.triggered.connect(self.show_instance_manager)
@@ -49,6 +54,8 @@ class MainWindow(QMainWindow):
         # profiles
         self.ui.actionAdd_Profile.triggered.connect(self.profile_manager)
 
+        # settings
+        self.ui.actionSettings.triggered.connect(self.settings_dialog)
         helper = ConfigHelper()
 
         current_profile = helper.get("General", "selected_profile")
@@ -59,8 +66,8 @@ class MainWindow(QMainWindow):
         self.ui.categoriesGroup.setVisible(False)
 
         # buttons
-        self.ui.actionInstallMod.triggered.connect(self.install_mod)
-        self.ui.action_Refresh.triggered.connect(self.action_Refresh)
+        # self.ui.actionInstallMod.triggered.connect(self.install_mod)
+        # self.ui.action_Refresh.triggered.connect(self.action_Refresh)
         self.ui.startButton.clicked.connect(self.startButton)
 
         # Setup the log list view
@@ -80,7 +87,7 @@ class MainWindow(QMainWindow):
         if url:
             self.handle_nxm_url(url)
 
-    def action_Refresh(self):
+    def action_refresh(self):
         # Add your refresh functionality here
         print("Refresh button clicked")
 
@@ -93,24 +100,21 @@ class MainWindow(QMainWindow):
 
     def startButton(self):
         # Add your launch functionality here
+        exes = get_executables()
+        exe_name = self.ui.executablesListBox.currentIndex
+        launch_exe = exes[exe_name]
+
         print("Launch button clicked")
-    
-    def install_mod(self):
-        dialog = QFileDialog(self)
-        dialog.setDirectory('~/Downloads')
-        dialog.setFileMode(QFileDialog.FileMode.ExistingFiles)
-        dialog.setNameFilter("*.zip")
-        dialog.setViewMode(QFileDialog.ViewMode.List)
-        if dialog.exec():
-            filenames = dialog.selectedFiles()
-            if filenames:
-                self.file_list.addItems([str(Path(filename)) for filename in filenames])
-    
+
     def nexus(self):
         webbrowser.open("https://www.nexusmods.com/fallout4")
 
     def profile_manager(self):
         self.w = ProfileManager()
+        self.w.show()
+
+    def settings_dialog(self):
+        self.w = SettingsDialog()
         self.w.show()
 
     def handle_nxm_url(self, url):
@@ -120,22 +124,3 @@ class MainWindow(QMainWindow):
             print(f"Handling NXM URL: {url}")
         else:
             print(f"Invalid URL: {url}")
-
-if __name__ == "__main__":
-    app = QApplication([])
-
-    # Check if the application was started with a URL argument
-    url = None
-    if len(sys.argv) > 1:
-        url = sys.argv[1]
-
-    window = MainWindow(url)
-    window.show()
-
-    with open('ui/stylesheets/vs15 Dark.qss', 'r') as f:
-        style = f.read()
-
-        # Set the stylesheet of the application
-        app.setStyleSheet(style)
-
-    app.exec()

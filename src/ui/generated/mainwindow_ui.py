@@ -3,7 +3,7 @@
 ################################################################################
 ## Form generated from reading UI file 'mainwindow.ui'
 ##
-## Created by: Qt User Interface Compiler version 6.7.1
+## Created by: Qt User Interface Compiler version 6.10.2
 ##
 ## WARNING! All changes made in this file will be lost when recompiling UI file!
 ################################################################################
@@ -24,7 +24,7 @@ from PySide6.QtWidgets import (QAbstractItemView, QAbstractScrollArea, QApplicat
     QSpacerItem, QSplitter, QStatusBar, QTabWidget,
     QToolBar, QTreeWidget, QTreeWidgetItem, QVBoxLayout,
     QWidget)
-import ui.resources_rc
+import resources_rc
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
@@ -34,38 +34,38 @@ class Ui_MainWindow(object):
         MainWindow.setAcceptDrops(True)
         MainWindow.setWindowTitle(u"Mod Organizer")
         icon = QIcon()
-        icon.addFile(u"../../../modorganizer/src/mo_icon.ico", QSize(), QIcon.Normal, QIcon.Off)
+        icon.addFile(u"../../../modorganizer/src/mo_icon.ico", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         MainWindow.setWindowIcon(icon)
         MainWindow.setDocumentMode(False)
         self.actionInstallMod = QAction(MainWindow)
         self.actionInstallMod.setObjectName(u"actionInstallMod")
         icon1 = QIcon()
-        icon1.addFile(u":/MO/gui/resources/system-installer.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon1.addFile(u":/MO/gui/resources/system-installer.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.actionInstallMod.setIcon(icon1)
         self.actionAdd_Profile = QAction(MainWindow)
         self.actionAdd_Profile.setObjectName(u"actionAdd_Profile")
         icon2 = QIcon()
-        icon2.addFile(u":/MO/gui/profiles", QSize(), QIcon.Normal, QIcon.Off)
+        icon2.addFile(u":/MO/gui/profiles", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.actionAdd_Profile.setIcon(icon2)
         self.actionModify_Executables = QAction(MainWindow)
         self.actionModify_Executables.setObjectName(u"actionModify_Executables")
         icon3 = QIcon()
-        icon3.addFile(u":/MO/gui/icon_executable", QSize(), QIcon.Normal, QIcon.Off)
+        icon3.addFile(u":/MO/gui/icon_executable", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.actionModify_Executables.setIcon(icon3)
         self.actionTool = QAction(MainWindow)
         self.actionTool.setObjectName(u"actionTool")
         icon4 = QIcon()
-        icon4.addFile(u":/MO/gui/plugins", QSize(), QIcon.Normal, QIcon.Off)
+        icon4.addFile(u":/MO/gui/plugins", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.actionTool.setIcon(icon4)
         self.actionSettings = QAction(MainWindow)
         self.actionSettings.setObjectName(u"actionSettings")
         icon5 = QIcon()
-        icon5.addFile(u":/MO/gui/settings", QSize(), QIcon.Normal, QIcon.Off)
+        icon5.addFile(u":/MO/gui/settings", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.actionSettings.setIcon(icon5)
         self.actionNexus = QAction(MainWindow)
         self.actionNexus.setObjectName(u"actionNexus")
         icon6 = QIcon()
-        icon6.addFile(u":/MO/gui/resources/internet-web-browser.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon6.addFile(u":/MO/gui/resources/internet-web-browser.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.actionNexus.setIcon(icon6)
         self.actionModPage = QAction(MainWindow)
         self.actionModPage.setObjectName(u"actionModPage")
@@ -75,27 +75,27 @@ class Ui_MainWindow(object):
         self.actionUpdate.setObjectName(u"actionUpdate")
         self.actionUpdate.setEnabled(False)
         icon7 = QIcon()
-        icon7.addFile(u":/MO/gui/update", QSize(), QIcon.Normal, QIcon.Off)
+        icon7.addFile(u":/MO/gui/update", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.actionUpdate.setIcon(icon7)
         self.actionNotifications = QAction(MainWindow)
         self.actionNotifications.setObjectName(u"actionNotifications")
         icon8 = QIcon()
-        icon8.addFile(u":/MO/gui/warning", QSize(), QIcon.Normal, QIcon.Off)
+        icon8.addFile(u":/MO/gui/warning", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.actionNotifications.setIcon(icon8)
         self.actionHelp = QAction(MainWindow)
         self.actionHelp.setObjectName(u"actionHelp")
         icon9 = QIcon()
-        icon9.addFile(u":/MO/gui/help", QSize(), QIcon.Normal, QIcon.Off)
+        icon9.addFile(u":/MO/gui/help", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.actionHelp.setIcon(icon9)
         self.actionEndorseMO = QAction(MainWindow)
         self.actionEndorseMO.setObjectName(u"actionEndorseMO")
         icon10 = QIcon()
-        icon10.addFile(u":/MO/gui/icon_favorite", QSize(), QIcon.Normal, QIcon.Off)
+        icon10.addFile(u":/MO/gui/icon_favorite", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.actionEndorseMO.setIcon(icon10)
         self.actionChange_Game = QAction(MainWindow)
         self.actionChange_Game.setObjectName(u"actionChange_Game")
         icon11 = QIcon()
-        icon11.addFile(u":/MO/gui/instance_switch", QSize(), QIcon.Normal, QIcon.Off)
+        icon11.addFile(u":/MO/gui/instance_switch", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.actionChange_Game.setIcon(icon11)
         self.actionExit = QAction(MainWindow)
         self.actionExit.setObjectName(u"actionExit")
@@ -129,7 +129,7 @@ class Ui_MainWindow(object):
         self.action_Refresh = QAction(MainWindow)
         self.action_Refresh.setObjectName(u"action_Refresh")
         icon12 = QIcon()
-        icon12.addFile(u":/MO/gui/resources/view-refresh.png", QSize(), QIcon.Normal, QIcon.Off)
+        icon12.addFile(u":/MO/gui/resources/view-refresh.png", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.action_Refresh.setIcon(icon12)
         self.actionToolBarMediumIcons = QAction(MainWindow)
         self.actionToolBarMediumIcons.setObjectName(u"actionToolBarMediumIcons")
@@ -275,7 +275,7 @@ class Ui_MainWindow(object):
         self.openFolderMenu = QPushButton(self.layoutWidget)
         self.openFolderMenu.setObjectName(u"openFolderMenu")
         icon13 = QIcon()
-        icon13.addFile(u":/MO/gui/open_folder", QSize(), QIcon.Normal, QIcon.Off)
+        icon13.addFile(u":/MO/gui/open_folder", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.openFolderMenu.setIcon(icon13)
 
         self.horizontalLayout_6.addWidget(self.openFolderMenu)
@@ -284,7 +284,7 @@ class Ui_MainWindow(object):
         self.restoreModsButton.setObjectName(u"restoreModsButton")
         self.restoreModsButton.setText(u"")
         icon14 = QIcon()
-        icon14.addFile(u":/MO/gui/restore", QSize(), QIcon.Normal, QIcon.Off)
+        icon14.addFile(u":/MO/gui/restore", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.restoreModsButton.setIcon(icon14)
 
         self.horizontalLayout_6.addWidget(self.restoreModsButton)
@@ -293,7 +293,7 @@ class Ui_MainWindow(object):
         self.saveModsButton.setObjectName(u"saveModsButton")
         self.saveModsButton.setText(u"")
         icon15 = QIcon()
-        icon15.addFile(u":/MO/gui/backup", QSize(), QIcon.Normal, QIcon.Off)
+        icon15.addFile(u":/MO/gui/backup", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.saveModsButton.setIcon(icon15)
 
         self.horizontalLayout_6.addWidget(self.saveModsButton)
@@ -325,7 +325,7 @@ class Ui_MainWindow(object):
         self.modList.setContextMenuPolicy(Qt.CustomContextMenu)
         self.modList.setStyleSheet(u"")
         self.modList.setEditTriggers(QAbstractItemView.EditKeyPressed|QAbstractItemView.SelectedClicked)
-        self.modList.setProperty("showDropIndicator", True)
+        self.modList.setProperty(u"showDropIndicator", True)
         self.modList.setDragEnabled(True)
         self.modList.setDragDropMode(QAbstractItemView.DragDrop)
         self.modList.setDefaultDropAction(Qt.MoveAction)
@@ -379,7 +379,7 @@ class Ui_MainWindow(object):
         self.clearFiltersButton.setLayoutDirection(Qt.RightToLeft)
         self.clearFiltersButton.setStyleSheet(u"border:1px solid #ff0000;")
         icon16 = QIcon()
-        icon16.addFile(u":/MO/gui/edit_clear", QSize(), QIcon.Normal, QIcon.Off)
+        icon16.addFile(u":/MO/gui/edit_clear", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.clearFiltersButton.setIcon(icon16)
         self.clearFiltersButton.setIconSize(QSize(12, 12))
 
@@ -454,7 +454,7 @@ class Ui_MainWindow(object):
         self.startButton.setFont(font1)
         self.startButton.setLocale(QLocale(QLocale.English, QLocale.UnitedStates))
         icon17 = QIcon()
-        icon17.addFile(u":/MO/gui/run", QSize(), QIcon.Normal, QIcon.Off)
+        icon17.addFile(u":/MO/gui/run", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.startButton.setIcon(icon17)
         self.startButton.setIconSize(QSize(36, 36))
 
@@ -471,7 +471,7 @@ class Ui_MainWindow(object):
         self.linkButton.setMaximumSize(QSize(16777215, 16777215))
         self.linkButton.setBaseSize(QSize(0, 0))
         icon18 = QIcon()
-        icon18.addFile(u":/MO/gui/link", QSize(), QIcon.Normal, QIcon.Off)
+        icon18.addFile(u":/MO/gui/link", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.linkButton.setIcon(icon18)
 
         self.verticalLayout_12.addWidget(self.linkButton)
@@ -505,7 +505,7 @@ class Ui_MainWindow(object):
         self.sortButton = QPushButton(self.espTab)
         self.sortButton.setObjectName(u"sortButton")
         icon19 = QIcon()
-        icon19.addFile(u":/MO/gui/sort", QSize(), QIcon.Normal, QIcon.Off)
+        icon19.addFile(u":/MO/gui/sort", QSize(), QIcon.Mode.Normal, QIcon.State.Off)
         self.sortButton.setIcon(icon19)
 
         self.horizontalLayout_7.addWidget(self.sortButton)
