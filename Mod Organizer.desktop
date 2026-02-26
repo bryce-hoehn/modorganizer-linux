@@ -1,6 +1,0 @@
-[Desktop Entry]
-Name=Mod Organizer
-Exec=python /home/bryce/Documents/GitHub/mo2/main.py
-Type=Application
-Icon=1204_ModOrganizer.0
-MimeType=x-scheme-handler/nxm;
