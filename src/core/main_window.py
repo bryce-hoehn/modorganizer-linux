@@ -5,11 +5,11 @@ from PySide6.QtWidgets import (
     QTreeWidgetItem,
 )
 from PySide6.QtCore import QUrl, Qt
-from ui.dialogs.instance_manager import InstanceManager
-from ui.dialogs.profile import ProfileManager
-from ui.dialogs.settings import SettingsDialog
-from utils.logging import ListViewLogger, LogModel
-from ui.qt.mainwindow import Ui_MainWindow
+from modorganizer.ui.dialogs.instance_manager import InstanceManager
+from modorganizer.ui.dialogs.profile import ProfileManager
+from modorganizer.ui.dialogs.settings import SettingsDialog
+from modorganizer.utils.logging import ListViewLogger, LogModel
+from modorganizer.ui.qt.mainwindow import Ui_MainWindow
 
 
 class MainWindow(QMainWindow):

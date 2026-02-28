@@ -1,8 +1,9 @@
 import sys
 import json
-from core.main_window import MainWindow
+from modorganizer.core.main_window import MainWindow
 from PySide6.QtWidgets import QApplication
-from ui.dialogs.instance_wizard import InstanceWizard
+from modorganizer.ui.dialogs.instance_selector import InstanceSelector
+from modorganizer.ui.dialogs.instance_wizard import InstanceWizard
 from modorganizer import DATA_DIR, CONFIG_DIR
 
 
@@ -25,7 +26,7 @@ def main():
 
     if instances:
         # instance(s) exist, show instance selection dialog
-        window = MainWindow()
+        window = InstanceSelector(instances)
         window.show()
     else:
         # instance wizard

@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QWidget
 
-from ui.qt.settingsdialog_ui import Ui_SettingsDialog
+from modorganizer.ui.qt.settingsdialog_ui import Ui_SettingsDialog
 
 
 class SettingsDialog(QWidget):

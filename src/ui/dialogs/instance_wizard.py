@@ -13,7 +13,7 @@ from PySide6.QtWidgets import (
     QWizardPage,
     QCheckBox,
 )
-from utils.steam_utils import SteamClient
+from modorganizer.utils.steam_utils import SteamClient
 from modorganizer import DATA_DIR, CONFIG_DIR
 
 

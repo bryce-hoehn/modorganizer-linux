@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QWidget
 
-from ui.qt.instancemanagerdialog import Ui_InstanceManagerDialog
+from modorganizer.ui.qt.instancemanagerdialog import Ui_InstanceManagerDialog
 
 
 class InstanceManager(QWidget):
