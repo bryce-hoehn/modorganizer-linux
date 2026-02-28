@@ -5,7 +5,27 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "org.bhoehn.modorganizer"
 version = "0.1.0"
+authors = [{name = "Bryce Hoehn", email = "bryce.hoehn@mailbox.org"}]
+maintainers = [{name = "Bryce Hoehn", email = "bryce.hoehn@mailbox.org"}]
+description = "Mod manager for various PC games. Ported to Linux."
+classifiers = [
+    "Development Status :: 1 - Planning",
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+    "Intended Audience :: End Users/Desktop",
+    "Topic :: Games/Entertainment",
+    "Programming Language :: Python",
+    "Operating System :: POSIX :: Linux",
+]
+keywords = ["mod organizer manager nexus"].
+urls = {Homepage = "https://github.com/bryce-hoehn/modorganizer-linux"}
 dependencies = ["PySide6", "fuse-overlayfs"]
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.scripts]
+modorganizer = "modorganizer.main:main"
 
 [tool.setuptools]
 packages = ["modorganizer"]
