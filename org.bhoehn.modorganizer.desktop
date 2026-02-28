@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Mod Organizer
+Comment=Mod manager for various PC games
+Exec=modorganizer
+Icon=org.bhoehn.modorganizer
+Terminal=false
+Categories=Game;

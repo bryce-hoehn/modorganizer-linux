@@ -34,5 +34,5 @@ include-package-data = true
 
 [tool.setuptools.data-files]
 "share/applications" = ["org.bhoehn.modorganizer.desktop"]
-"share/icons/hicolor/scalable/apps" = ["org.bhoehn.modorganizer.svg"]
+"share/icons/hicolor/scalable/apps" = ["org.bhoehn.modorganizer.png"]
 "share/metainfo" = ["org.bhoehn.modorganizer.metainfo.xml"]
