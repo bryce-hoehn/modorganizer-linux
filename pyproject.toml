@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "modorganizer-linux"
 version = "0.1.0"
-dependencies = ["PySide6", "fuse-overlayfs"]
+dependencies = ["PySide6", "fuse-overlayfs", "xdg-base-dirs", "steamodd"]
 
 [tool.setuptools]
 packages = ["core", "ui", "utils"]

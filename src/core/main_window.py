@@ -5,17 +5,11 @@ from PySide6.QtWidgets import (
     QTreeWidgetItem,
 )
 from PySide6.QtCore import QUrl, Qt
-from core.instance import InstanceManager
-from core.profile import ProfileManager
+from ui.dialogs.instance_manager import InstanceManager
+from ui.dialogs.profile import ProfileManager
 from ui.dialogs.settings import SettingsDialog
 from utils.logging import ListViewLogger, LogModel
-from ui.generated.mainwindow import Ui_MainWindow
-from utils.parse_config import (
-    ConfigHelper,
-    get_executable_titles,
-    get_executables,
-    get_mod_list,
-)
+from ui.qt.mainwindow import Ui_MainWindow
 
 
 class MainWindow(QMainWindow):
@@ -32,18 +26,17 @@ class MainWindow(QMainWindow):
         )
 
         # modList
-        mod_list = get_mod_list()
         self.ui.modList.setHeaderLabels(
             ["Mod Name", "Conflicts", "Flags", "Category", "Version", "Priority"]
         )
         self.ui.modList.setAlternatingRowColors(True)
 
-        for mod in mod_list:
-            QTreeWidgetItem(self.ui.modList, [mod, "", "", "", "1", "1"]).setCheckState(
-                0, Qt.CheckState.Unchecked
-            )
+        # for mod in mod_list:
+        #     QTreeWidgetItem(self.ui.modList, [mod, "", "", "", "1", "1"]).setCheckState(
+        #         0, Qt.CheckState.Unchecked
+        #     )
 
-        self.ui.activeModsCounter.display(len(mod_list))
+        # self.ui.activeModsCounter.display(len(mod_list))
 
         # instance manager
         self.ui.actionChange_Game.triggered.connect(self.show_instance_manager)
@@ -56,11 +49,7 @@ class MainWindow(QMainWindow):
 
         # settings
         self.ui.actionSettings.triggered.connect(self.settings_dialog)
-        helper = ConfigHelper()
 
-        current_profile = helper.get("General", "selected_profile")
-
-        self.ui.profileBox.addItem(current_profile)
         # filter
         self.ui.displayCategoriesBtn.toggled.connect(self.filter_toggle)
         self.ui.categoriesGroup.setVisible(False)
@@ -75,10 +64,6 @@ class MainWindow(QMainWindow):
         self.ui.logList.setModel(self.log_model)
         self.logger = ListViewLogger()
         self.logger.message_written.connect(self.log_model.add_log)
-
-        # executables
-        exes = get_executable_titles()
-        self.ui.executablesListBox.addItems(exes)
 
         # Redirect stdout and stderr
         sys.stdout = self.logger
@@ -99,11 +84,6 @@ class MainWindow(QMainWindow):
         self.w.show()
 
     def startButton(self):
-        # Add your launch functionality here
-        exes = get_executables()
-        exe_name = self.ui.executablesListBox.currentIndex
-        launch_exe = exes[exe_name]
-
         print("Launch button clicked")
 
     def nexus(self):

@@ -3,3 +3,5 @@ Name: modorganizer-linux
 Version: 0.1.0
 Requires-Dist: PySide6
 Requires-Dist: fuse-overlayfs
+Requires-Dist: xdg-base-dirs
+Requires-Dist: steamodd

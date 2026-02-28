@@ -74,7 +74,7 @@ from PySide6.QtWidgets import (
     QVBoxLayout,
     QWidget,
 )
-import ui.generated.resources_rc
+import ui.qt.resources_rc
 
 
 class Ui_SettingsDialog(object):

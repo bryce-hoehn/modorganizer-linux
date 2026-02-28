@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QWidget
 
-from ui.generated.profilesdialog import Ui_ProfilesDialog
+from ui.qt.profilesdialog import Ui_ProfilesDialog
 
 
 class ProfileManager(QWidget):

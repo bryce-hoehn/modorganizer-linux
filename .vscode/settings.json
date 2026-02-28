@@ -1,17 +1,13 @@
 {
-  "editor.formatOnSave": true,
-  "editor.formatOnPaste": true,
-  "editor.tabSize": 4,
-  "editor.insertSpaces": true,
-  "files.eol": "\n",
-  "files.trimTrailingWhitespace": true,
-  "files.trimFinalNewlines": true,
-  "files.insertFinalNewline": true,
-  "[python]": {
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true
-  },
-  "pylint.interpreter": [
-    "${workspaceFolder}/.venv/bin/python"
-  ]
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/stubs"
+    ],
+    "python.linting.pylanceArgs": [
+        "--ignore-missing-imports"
+    ],
+    "python.analysis.typeCheckingMode": "basic",
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportAttributeAccessIssue": "none",
+        "reportOptionalMemberAccess": "none"
+    }
 }

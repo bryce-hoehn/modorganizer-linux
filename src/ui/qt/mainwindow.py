@@ -73,7 +73,7 @@ from PySide6.QtWidgets import (
     QWidget,
 )
 
-import ui.generated.resources_rc
+import ui.qt.resources_rc
 
 
 class Ui_MainWindow(object):

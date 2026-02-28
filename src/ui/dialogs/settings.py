@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QWidget
 
-from ui.generated.settingsdialog_ui import Ui_SettingsDialog
+from ui.qt.settingsdialog_ui import Ui_SettingsDialog
 
 
 class SettingsDialog(QWidget):

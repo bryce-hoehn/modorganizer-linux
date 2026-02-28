@@ -1,0 +1,12 @@
+{
+  "include": ["src"],
+  "exclude": ["**/node_modules", "**/__pycache__", "**/.*"],
+  "stubPath": "stubs",
+  "typeCheckingMode": "basic",
+  "reportMissingImports": "none",
+  "reportAttributeAccessIssue": "none",
+  "reportOptionalMemberAccess": "none",
+  "reportGeneralTypeIssues": "none",
+  "pythonVersion": "3.10",
+  "pythonPlatform": "Linux"
+}
