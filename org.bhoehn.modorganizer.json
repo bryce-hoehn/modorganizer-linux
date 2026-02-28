@@ -17,6 +17,9 @@
     {
       "name": "modorganizer",
       "buildsystem": "simple",
+      "build-options": {
+        "build-args": ["--share=network"]
+      },
       "build-commands": ["pip3 install --no-build-isolation --prefix=/app ."],
       "sources": [
         {
