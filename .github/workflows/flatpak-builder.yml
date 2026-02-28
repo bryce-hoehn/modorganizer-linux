@@ -6,7 +6,7 @@ on:
 name: CI
 jobs:
   flatpak:
-    name: "Flatpak"
+    name: "Flatpak Builder"
     permissions:
       contents: read
     runs-on: ubuntu-latest
