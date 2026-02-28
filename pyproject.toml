@@ -3,12 +3,16 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "modorganizer-linux"
+name = "org.bhoehn.modorganizer"
 version = "0.1.0"
-dependencies = ["PySide6", "fuse-overlayfs", "xdg-base-dirs", "steamodd"]
+dependencies = ["PySide6", "fuse-overlayfs"]
 
 [tool.setuptools]
-packages = ["core", "ui", "utils"]
+packages = ["modorganizer"]
+package-dir = {modorganizer = "src"}
+include-package-data = true
 
-[tool.setuptools.package-dir]
-"" = "src"
+[tool.setuptools.data-files]
+"share/applications" = ["org.bhoehn.modorganizer.desktop"]
+"share/icons/hicolor/scalable/apps" = ["org.bhoehn.modorganizer.svg"]
+"share/metainfo" = ["org.bhoehn.modorganizer.metainfo.xml"]
