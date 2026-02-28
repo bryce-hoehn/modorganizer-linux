@@ -1,12 +1,11 @@
 {
   "include": ["src"],
-  "exclude": ["**/node_modules", "**/__pycache__", "**/.*"],
-  "stubPath": "stubs",
+  "exclude": ["**/node_modules", "**/__pycache__", "**/.*", ".venv"],
   "typeCheckingMode": "basic",
   "reportMissingImports": "none",
   "reportAttributeAccessIssue": "none",
   "reportOptionalMemberAccess": "none",
   "reportGeneralTypeIssues": "none",
-  "pythonVersion": "3.10",
+  "pythonVersion": "3.11",
   "pythonPlatform": "Linux"
 }

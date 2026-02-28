@@ -16,7 +16,7 @@ classifiers = [
     "Programming Language :: Python",
     "Operating System :: POSIX :: Linux",
 ]
-keywords = ["mod organizer manager nexus"].
+keywords = ["mod organizer manager nexus"]
 urls = {Homepage = "https://github.com/bryce-hoehn/modorganizer-linux"}
 dependencies = ["PySide6", "fuse-overlayfs"]
 
