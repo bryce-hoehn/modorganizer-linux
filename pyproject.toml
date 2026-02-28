@@ -33,6 +33,6 @@ package-dir = {modorganizer = "src"}
 include-package-data = true
 
 [tool.setuptools.data-files]
-"share/applications" = ["org.bhoehn.modorganizer.desktop"]
-"share/icons/hicolor/scalable/apps" = ["org.bhoehn.modorganizer.png"]
-"share/metainfo" = ["org.bhoehn.modorganizer.metainfo.xml"]
+"share/applications" = ["flatpak/org.bhoehn.modorganizer.desktop"]
+"share/icons/hicolor/scalable/apps" = ["flatpak/org.bhoehn.modorganizer.png"]
+"share/metainfo" = ["flatpak/org.bhoehn.modorganizer.metainfo.xml"]

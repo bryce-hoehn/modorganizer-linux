@@ -18,5 +18,5 @@ jobs:
     - uses: flatpak/flatpak-github-actions/flatpak-builder@v6
       with:
         bundle: modorganizer.flatpak
-        manifest-path: org.bhoehn.modorganizer.json
+        manifest-path: flatpak/org.bhoehn.modorganizer.json
         cache-key: flatpak-builder-${{ github.sha }}
