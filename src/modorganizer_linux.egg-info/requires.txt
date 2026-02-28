@@ -1,4 +1,0 @@
-PySide6
-fuse-overlayfs
-xdg-base-dirs
-steamodd
