@@ -1,13 +1,1 @@
-{
-    "python.analysis.extraPaths": [
-        "${workspaceFolder}/stubs"
-    ],
-    "python.linting.pylanceArgs": [
-        "--ignore-missing-imports"
-    ],
-    "python.analysis.typeCheckingMode": "basic",
-    "python.analysis.diagnosticSeverityOverrides": {
-        "reportAttributeAccessIssue": "none",
-        "reportOptionalMemberAccess": "none"
-    }
-}
+{}
