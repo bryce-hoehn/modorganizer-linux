@@ -1,16 +1,9 @@
-from pathlib import Path
 import sys
 import json
 from core.main_window import MainWindow
 from PySide6.QtWidgets import QApplication
 from ui.dialogs.instance_wizard import InstanceWizard
-from xdg_base_dirs import xdg_data_home, xdg_config_home
-
-# Contains instances and per-instance settings
-DATA_DIR = xdg_data_home() / "mo2"
-
-# Contains global MO2 settings
-CONFIG_DIR = xdg_config_home() / "mo2"
+from modorganizer import DATA_DIR, CONFIG_DIR
 
 
 def main():

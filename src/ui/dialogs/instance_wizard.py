@@ -1,3 +1,4 @@
+import json
 from PySide6.QtWidgets import (
     QHBoxLayout,
     QLabel,
@@ -13,6 +14,7 @@ from PySide6.QtWidgets import (
     QCheckBox,
 )
 from utils.steam_utils import SteamClient
+from modorganizer import DATA_DIR, CONFIG_DIR
 
 
 class InstanceWizard(QWizard):
@@ -42,9 +44,15 @@ class InstanceWizard(QWizard):
 
         print(f"Creating instance '{instance_name}' for {selected_game}")
 
-        # Do your actual work here (create instance, etc.)
+        data = {
+            "game": selected_game,
+            "edition": selected_edition,
+            "name": instance_name,
+        }
 
-        # Call parent accept to close the wizard
+        with open(f"{DATA_DIR}/instance.json", "w") as f:
+            json.dump(data, f)
+
         super().accept()
 
 
@@ -205,7 +213,6 @@ class ConfirmationPage(QWizardPage):
         """Called when this page is about to be shown"""
         game_index = self.wizard.field("selectedGame")
 
-        # Handle the edition index (it's also a QListWidget returning int)
         edition_index = self.wizard.field("selectedEdition")
         editions = ["Steam"]
 
