@@ -1,3 +1,0 @@
-PySide6
-fuse-overlayfs
-websocket-client
