@@ -1,4 +1,11 @@
-class FalloutNVGame:
+from PySide6.QtCore import QFileInfo
+
+import mobase
+
+from modorganizer.plugins.utils.basic_game import BasicGame
+
+
+class FalloutNVGame(BasicGame):
     Name = "Fallout New Vegas Plugin"
     Author = "Bryce Hoehn"
     Version = "0.1.0"
@@ -15,28 +22,33 @@ class FalloutNVGame:
     GameNexusId = 130
     GameSteamId = 22380
 
-    vanilla_archives = (
-        "Fallout - Textures.bsa",
-        "Fallout - Textures2.bsa",
-        "Fallout - Meshes.bsa",
-        "Fallout - Voices1.bsa",
-        "Fallout - Sound.bsa",
-        "Fallout - Misc.bsa",
-    )
-
-    ini_file = "fallout.ini"
-
     def init(self, organizer: mobase.IOrganizer):
         super().init(organizer)
-        self._register_feature(StardewValleyModDataChecker())
         return True
 
     def executables(self):
         return [
             mobase.ExecutableInfo(
-                "SMAPI", QFileInfo(self.gameDirectory(), "StardewModdingAPI.exe")
+                "New Vegas", QFileInfo(self.gameDirectory(), "FalloutNV.exe")
             ),
             mobase.ExecutableInfo(
-                "Stardew Valley", QFileInfo(self.gameDirectory(), "Stardew Valley.exe")
+                "Fallout Launcher",
+                QFileInfo(self.gameDirectory(), "FalloutNVLauncher.exe"),
+            ),
+            mobase.ExecutableInfo(
+                "NVSE",
+                QFileInfo(self.gameDirectory(), "NVSE.exe"),
             ),
         ]
+
+    def vanillaArchives(self):
+        return (
+            "Fallout - Textures.bsa",
+            "Fallout - Textures2.bsa",
+            "Fallout - Meshes.bsa",
+            "Fallout - Voices1.bsa",
+            "Fallout - Sound.bsa",
+            "Fallout - Misc.bsa",
+        )
+
+    # ini_file = "fallout.ini"

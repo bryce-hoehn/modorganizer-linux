@@ -1,0 +1,22 @@
+Metadata-Version: 2.4
+Name: org.bhoehn.modorganizer
+Version: 0.1.0
+Summary: Mod manager for various PC games. Ported to Linux.
+Author-email: Bryce Hoehn <bryce.hoehn@mailbox.org>
+Maintainer-email: Bryce Hoehn <bryce.hoehn@mailbox.org>
+Project-URL: Homepage, https://github.com/bryce-hoehn/modorganizer-linux
+Keywords: mod organizer manager nexus
+Classifier: Development Status :: 1 - Planning
+Classifier: License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)
+Classifier: Intended Audience :: End Users/Desktop
+Classifier: Topic :: Games/Entertainment
+Classifier: Programming Language :: Python
+Classifier: Operating System :: POSIX :: Linux
+Description-Content-Type: text/markdown
+Requires-Dist: PySide6
+Requires-Dist: fuse-overlayfs
+Requires-Dist: websocket-client
+
+WIP
+
+Will eventually be a complete rewrite of Mod Organizer 2 using Pyside6 instead of C++ with native Linux support.

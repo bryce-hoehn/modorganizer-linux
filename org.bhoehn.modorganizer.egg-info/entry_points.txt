@@ -1,0 +1,2 @@
+[console_scripts]
+modorganizer = modorganizer.main:main

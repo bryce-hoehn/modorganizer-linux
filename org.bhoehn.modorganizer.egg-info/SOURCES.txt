@@ -1,0 +1,15 @@
+README.md
+pyproject.toml
+flatpak/org.bhoehn.modorganizer.desktop
+flatpak/org.bhoehn.modorganizer.metainfo.xml
+flatpak/org.bhoehn.modorganizer.png
+org.bhoehn.modorganizer.egg-info/PKG-INFO
+org.bhoehn.modorganizer.egg-info/SOURCES.txt
+org.bhoehn.modorganizer.egg-info/dependency_links.txt
+org.bhoehn.modorganizer.egg-info/entry_points.txt
+org.bhoehn.modorganizer.egg-info/requires.txt
+org.bhoehn.modorganizer.egg-info/top_level.txt
+src/__init__.py
+src/config.py
+src/main.py
+src/mobase.py

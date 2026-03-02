@@ -18,8 +18,7 @@ classifiers = [
 ]
 keywords = ["mod organizer manager nexus"]
 urls = {Homepage = "https://github.com/bryce-hoehn/modorganizer-linux"}
-dependencies = ["PySide6", "fuse-overlayfs"]
-
+dependencies = ["PySide6", "fuse-overlayfs", "websocket-client"]
 [project.readme]
 file = "README.md"
 content-type = "text/markdown"
